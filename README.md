@@ -8,6 +8,5 @@
 
 
 # Đầu tiên là clone dự án về: git clone https://github.com/huyletran007/POLY-SHOP.git
-# Clone về xe vào mục ![image](https://user-images.githubusercontent.com/93638840/193202935-a68d8379-5a46-4a4e-9d3a-0942378cd2d4.png)
-# vào đó lấy file sql và chạy trên SQL Server
+# Clone về xe vào mục ![image](https://user-images.githubusercontent.com/93638840/193202935-a68d8379-5a46-4a4e-9d3a-0942378cd2d4.png) vào đó lấy file sql và chạy trên SQL Server nhớ là vào file ![image](https://user-images.githubusercontent.com/93638840/193203305-b6274862-505c-4cda-b3f9-06dab5a14121.png) sửa lại username và password trong SQL Server
 # Trang web chủ yếu là làm các chức năng nên mấy cái khác không có làm tới.
