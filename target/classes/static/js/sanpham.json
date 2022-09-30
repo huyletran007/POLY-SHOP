@@ -1,0 +1,68 @@
+[{
+    "id" : "sp1",
+    "img": "img1.jpg",
+    "name": "Sản phẩm 1",
+    "price": 500000,
+    "soluong" : 0
+}, {
+    "id" : "sp2",
+    "img": "img2.jpg",
+    "name": "Sản phẩm 2",
+    "price": 400000,
+    "soluong" : 100
+},{
+    "id" : "sp3",
+    "img": "img3.jpg",
+    "name": "Sản phẩm 3",
+    "price": 900000,
+    "soluong" : 100
+}, {
+    "id" : "sp4",
+    "img": "img4.jpg",
+    "name": "Sản phẩm 4",
+    "price": 500000,
+    "soluong" : 100
+},{
+    "id" : "sp5",
+    "img": "img5.jpg",
+    "name": "Sản phẩm 5",
+    "price": 350000,
+    "soluong" : 100
+}, {
+    "id" : "sp6",
+    "img": "img6.jpg",
+    "name": "Sản phẩm 6",
+    "price": 250000,
+    "soluong" : 100
+},{
+    "id" : "sp7",
+    "img": "img1.jpg",
+    "name": "Sản phẩm 7",
+    "price": 350000,
+    "soluong" : 100
+}, {
+    "id" : "sp8",
+    "img": "img1.jpg",
+    "name": "Sản phẩm 8",
+    "price": 350000,
+    "soluong" : 100
+},{
+    "id" : "sp9",
+    "img": "img1.jpg",
+    "name": "Sản phẩm 9",
+    "price": 350000,
+    "soluong" : 100
+}, {
+    "id" : "sp10",
+    "img": "img1.jpg",
+    "name": "Sản phẩm 10",
+    "price": 1000,
+    "soluong" : 100
+},{
+    "id" : "sp11",
+    "img": "img1.jpg",
+    "name": "Sản phẩm 11",
+    "price": 1000,
+    "soluong" : 100
+}
+]

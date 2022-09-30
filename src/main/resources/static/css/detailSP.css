@@ -1,0 +1,106 @@
+.containerchuot {
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cot-phai {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cot-trai {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.img-detail {
+    height: 500px;
+    width: 360px;
+}
+
+.textd-catename {
+    font-size: 25px;
+    text-decoration: none !important;
+}
+
+.textd-name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.textd-nprice {
+    font-size: 30px;
+    color: red;
+    color: #fe302e;
+    font-weight: 600;
+    font-family: Georgia, Sans-serifrif;
+    font-style: italic;
+    margin-top: 3px;
+    line-height: 40px;
+}
+
+.textd-price {
+    text-decoration: line-through;
+    font-size: 23px;
+    font-weight: 400;
+    display: block;
+    color: #aaa;
+    line-height: 24px;
+    margin-top: 0;
+    font-family: Georgia, Sans-serifrif;
+    font-style: oblique;
+    min-height: 30px;
+}
+
+.textd-cate {
+    margin-top: 20px;
+    font-size: 20px;
+    text-decoration: none !important;
+}
+
+.textd-damua {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.btn1 {
+    display: inline-block;
+    padding: 0.6em 1.7em;
+    border: 0.1em solid #000000;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #000000;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+    width: 180px;
+}
+
+.btn1:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+.soc-1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.soc-ngang-detail{
+    background-color: black;
+    color: white;
+    height: 3px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}

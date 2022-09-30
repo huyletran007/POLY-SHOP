@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif !important;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*MENU*/
+.collapse {}
+
+.bi {
+    font-size: 25px;
+    color: black;
+}
+a{
+    color: black;
+}
+#logo1 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: black;
+}
+
+#logo2 {
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: black;
+}
+
+#icon1 {
+    margin-right: 10px;
+}
+
+#icon2 {
+    margin-right: 10px;
+}
+
+#icon3 {
+    margin-right: 10px;
+}
+
+.dropdown-menu {
+    top: 80%;
+    left: 20%;
+    right: 20%;
+}
+
+.dropdown-item {
+    padding: 0.25rem 2.5rem;
+}
+
+.nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.navbar{
+    padding: 1rem 1rem;
+}
+.dropdowns:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdowns>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    transition: all 0.3s ease-in-out;
+}
+nav.sticky{
+    padding: 8px 8px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+}
+nav.sticky #logo1, #logo2{
+    color: black;
+}
+nav.sticky #main-menu a{
+    color: #fff;
+}
+.badge{
+    border: 1px solid gray;
+    background-color: gray;
+}
+/*MENU*/ 
+/*SILDE*/
+.title-slide{
+    font-weight: bold;
+    font-size: 140px;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    text-shadow: 0px 10px 10px gray;;
+}
+.title-slide-1{
+    font-weight: bold;
+    font-size: 140px;
+    color: rgb(189, 188, 188);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    text-shadow: 0px 10px 10px white;;
+}
+/*SILDE*/
+
+/*FOOTER*/
+#icon123 {
+    background-size: auto;
+}
+.btn-circle.btn-sm {
+    width: 40px;
+    height: 40px;
+    padding: 1px 0px;
+    border-radius: 30px;
+    font-size: 10px;
+    text-align: center;
+}
+#row-footer #a1{
+    height: 300px;
+}
+#row-footer #a1 div{
+    margin-top: 50px;
+}
+#row-footer #a2{
+    height: 300px;
+}
+.bi-footer{
+    display: flex;
+}
+#bi-foooter1{
+    margin-left: 10px;
+}
+/*NOI DUNG*/
+.soc-ngang{
+    background-color: black;
+    color: white;
+    height: 40px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+#noidung-1{
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+#noidung-1 .col-sm-4{
+    
+}
+#noidung-1 .col-sm-4{
+   
+}
+.caption{
+    margin-top: 10px;
+    font-weight: bold;
+}
+#noidung-1 .col-sm-4:hover{
+    box-shadow: 0 10px 10px gray;
+}
+/*NOI DUNG*/
+/*FOOTER*/

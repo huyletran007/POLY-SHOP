@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif ;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*MENU*/
+.collapse {}
+
+.bi {
+    font-size: 25px;
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+#logo1 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: black;
+}
+
+#logo2 {
+    border: none;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: black;
+}
+
+#icon1 {
+    margin-right: 10px;
+}
+
+#icon2 {
+    margin-right: 10px;
+}
+
+#icon3 {
+    margin-right: 10px;
+}
+
+.dropdown-menu {
+    top: 80%;
+    left: 20%;
+    right: 20%;
+}
+
+.dropdown-item {
+    padding: 0.25rem 2.5rem;
+}
+
+.nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.navbar {
+    padding: 1rem 1rem;
+}
+
+.dropdowns:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdowns>.dropdown-toggle:active {
+    /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f5f5f5;
+    transition: all 0.3s ease-in-out;
+}
+
+nav.sticky {
+    padding: 8px 8px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+nav.sticky #logo1,
+#logo2 {
+    color: black;
+}
+
+nav.sticky #main-menu a {
+    color: #fff;
+}
+
+.badge {
+    border: 1px solid gray;
+    background-color: gray;
+}
+
+/*MENU*/
+/*SILDE*/
+.title-slide {
+    font-weight: bold;
+    font-size: 140px;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    text-shadow: 0px 10px 10px gray;
+}
+
+.title-slide-1 {
+    font-weight: bold;
+    font-size: 140px;
+    color: rgb(189, 188, 188);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    text-shadow: 0px 10px 10px white;
+}
+
+/*SILDE*/
+
+/*Login*/
+#login #left,
+#right {
+    height: 400px;
+}
+
+#login #left {
+    border-right: 2px solid gray;
+    height: 400px;
+}
+
+#login #right {
+    border-left: 2px solid gray;
+    height: 400px;
+}
+
+#login #left {
+    position: relative;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    text-shadow: 0px 10px 10px white;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#login #left .text-left {
+    margin-top: 100px;
+    margin-bottom: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#login #right .form {
+    margin-top: 90px;
+    margin-bottom: auto;
+}
+.btn1 {
+    display: inline-block;
+    padding: 0.6em 1.7em;
+    border: 0.1em solid #000000;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #000000;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  
+  .btn1:hover {
+    color: #ffffff;
+    background-color: #000000;
+  }
+/*Login*/
+
+/*FOOTER*/
+/*icon*/
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); */
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+}
+
+.wrapper .icon {
+    position: relative;
+    color: #000;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    padding: 15px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #ffffff;
+    color: #ffffff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #ffffff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+    background: #1877F2;
+    color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+    background: #1DA1F2;
+    color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+    background: #E4405F;
+    color: #ffffff;
+}
+
+.wrapper .linkedin:hover,
+.wrapper .linkedin:hover .tooltip,
+.wrapper .linkedin:hover .tooltip::before {
+    background: #1877F2;
+    color: #ffffff;
+}
+
+
+
+/*icon*/
+#icon123 {
+    background-size: auto;
+}
+
+.btn-circle.btn-sm {
+    width: 40px;
+    height: 40px;
+    padding: 1px 0px;
+    border-radius: 30px;
+    font-size: 10px;
+    text-align: center;
+}
+
+#row-footer #a1 {
+    height: 300px;
+}
+
+#row-footer #a1 div {
+    margin-top: 50px;
+}
+
+#row-footer #a2 {
+    height: 300px;
+}
+
+.bi-footer {
+    display: flex;
+}
+
+#bi-foooter1 {
+    margin-left: 10px;
+}
+
+/*FOOTER*/

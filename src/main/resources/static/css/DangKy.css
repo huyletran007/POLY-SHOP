@@ -1,0 +1,59 @@
+
+/*Login*/
+#login #left,
+#right {
+    height: 550px;
+}
+
+#login #left {
+    border-right: 2px solid gray;
+    height: 750px;
+}
+
+#login #right {
+    border-left: 2px solid gray;
+    height: 750px;
+}
+
+#login #left {
+    position: relative;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    text-shadow: 0px 10px 10px white;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#login #left .text-left {
+    margin-top: 100px;
+    margin-bottom: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#login #right .form {
+    margin-top: 90px;
+    margin-bottom: auto;
+}
+.btn1 {
+    display: inline-block;
+    padding: 0.6em 1.7em;
+    border: 0.1em solid #000000;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    color: #000000;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  
+  .btn1:hover {
+    color: #ffffff;
+    background-color: #000000;
+  }
+/*Login*/

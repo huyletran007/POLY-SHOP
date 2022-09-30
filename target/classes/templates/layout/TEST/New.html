@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New</title>
+  <!--boostrap 4-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <!--icon-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/73ae4a903f.js" crossorigin="anonymous"></script>
+  <!--style-->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/gh/loadingio/transition.css@v2.0.0/dist/transition.css" />
+  <link rel="stylesheet" href="/css/New.css">
+</head>
+
+<body ng-app="myApp">
+  <!--MENU-->
+  <nav class="navbar navbar-expand-xl sticky-top">
+    <a id="logo1" class="collapse navbar-collapse" href="./index.html" style="">POLY SHOP</a>
+    <a id="logo2" class="navbar-toggler" href="./index.html" style="">POLY SHOP</a>
+    <a href="#" class="navbar-toggler bi bi-person" style="margin-right: 5px; margin-left: auto; border: none;"></a>
+    <a href="#" class="navbar-toggler bi bi-bag" style="margin-right: 5px;  border: none;"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-justify"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="./index.html">Trang chủ <span class="sr-only"></span></a>
+        </li>
+        <div class="dropdowns">
+          <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false" href="#">Sản phẩm</a>
+          <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+
+            <div class="container">
+
+              <div class="row">
+
+                <div class="col-md-2">
+                  <a class="dropdown-item" href="#">T-Shirt <span class="badge">42</span></a>
+                </div>
+
+                <div class="col-md-2">
+                  <a class="dropdown-item" href="#">Pants <span class="badge">42</span></a>
+
+                </div>
+
+                <div class="col-md-2">
+                  <a class="dropdown-item" href="#">Shirt <span class="badge">42</span></a>
+
+                </div>
+
+                <div class="col-md-2">
+                  <a class="dropdown-item" href="#">Hat <span class="badge">42</span></a>
+
+                </div>
+
+                <div class="col-md-2">
+                  <a class="dropdown-item" href="#">Hoddie <span class="badge">42</span></a>
+                </div>
+
+                <div class="col-md-2">
+                  <a class="dropdown-item" href="#">Jacket <span class="badge">42</span></a>
+                </div>
+              </div>
+
+            </div>                                                                                                                          
+          </div>
+        </div>
+        <li class="nav-item">
+          <a class="nav-link" href="#!new">New</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!noibat">Nổi bật</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#!lienhe">Liên hệ</a>
+        </li>
+
+      </ul>
+      <form class="collapse navbar-collapse flex-row-reverse">
+        <a href="#" class="bi bi-person" id="icon3"></a>
+        <a href="#" class="bi bi-search" id="icon2"></a>
+        <a href="#" class="bi bi-bag" id="icon1"></a>
+      </form>
+    </div>
+  </nav>
+  <!--MENU-->
+
+  <!--Nôi dung-->
+  <article ng-view>
+    
+  </article>
+  <!--Nôi dung-->
+  <!--FOOTER-->
+  <footer class="bg-dark text-center text-white" ng-include="'footerindex.html'">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!-- Section: Social media -->
+      <ul class="wrapper">
+        <li class="icon gift">
+          <span class="tooltip">Gift</span>
+          <a href="#" class="fas fa-gift" data-toggle="modal" data-target="#exampleModalGift"></a>
+
+        </li>
+        <li class="icon facebook">
+          <span class="tooltip">Facebook</span>
+          <span><i class="fa fa-facebook"></i></span>
+        </li>
+        <li class="icon twitter">
+          <span class="tooltip">Twitter</span>
+          <span><i class="fab fa-twitter"></i></span>
+        </li>
+        <li class="icon instagram">
+          <span class="tooltip">Instagram</span>
+          <span><i class="fab fa-instagram"></i></span>
+        </li>
+        <li class="icon linkedin">
+          <span class="tooltip">Linkedin</span>
+          <span><i class="fab fa-linkedin-in"></i></span>
+        </li>
+      </ul>
+      <!-- Section: Social media -->
+
+      <!-- Section: Form -->
+      <section class="">
+        <form action="">
+          <!--Grid row-->
+          <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-auto">
+              <p class="pt-2">
+                <strong>Sign up for our newsletter</strong>
+              </p>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-5 col-12">
+              <!-- Email input -->
+              <div class="form-outline form-white mb-4">
+                <input type="email" id="form5Example21" class="form-control" placeholder="Email address" />
+              </div>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-auto">
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-outline-light mb-4">
+                Subscribe
+              </button>
+            </div>
+            <!--Grid column-->
+          </div>
+          <!--Grid row-->
+        </form>
+      </section>
+      <!-- Section: Form -->
+
+      <!-- Section: Text -->
+      <section class="mb-4">
+        <p style="font-weight: bold;">
+          Wish you happy shopping
+        </p>
+      </section>
+      <div class="row" id="row-footer" ng-controller="myCtrl">
+        <div class="col-md-6" id="a1">
+          <div class="text-justify"><span class="bi bi-map" style="color:white;"></span> Địa chỉ: Công viên
+            phần mềm, Toà nhà Innovation lô 24, Quang Trung, Quận 12, Thành phố Hồ Chí Minh</div>
+
+          <div class="text-justify"><span class="bi bi-telephone-fill" style="color:white;"></span> Số điện
+            thoại: 0765230162</div>
+        </div>
+        <div class="col-md-6" id="a2">
+          <!--Google map-->
+          <i id="map-container-google-1" class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.460720389874!2d106.62490081417222!3d10.852520060753621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b161f50ae47%3A0x2328d1d1acc3b11a!2sFPT%20Polytechnic%20-%20T%C3%B2a%20F!5e0!3m2!1sen!2sus!4v1648101836139!5m2!1sen!2sus"
+              style="height: 300px; width: 100%;"></iframe>
+          </i>
+
+          <!--Google Maps-->
+        </div>
+        <script>
+          var app = angular.module("myApp", []);
+          app.controller("myCtrl", function ($scope) {
+            // cung cấp thông tin sinh viên ở đây
+            $scope.diachi =
+              "Công viên phần mềm, Toà nhà Innovation lô 24, Quang Trung, Quận 12, Thành phố Hồ Chí Minh";
+            $scope.sdt = "0765230162";
+          });
+        </script>
+      </div>
+      <!-- Section: Text -->
+
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+
+      </section>
+      <!-- Section: Links -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 By:
+      <a class="text-white" href="https://mdbootstrap.com/">LeTranHoangHuy</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!--FOOTER-->
+  <script>
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop()) {
+          $('nav').addClass('sticky');
+        } else {
+          $('nav').removeClass('sticky');
+        }
+      });
+    });
+  </script>
+  <!-- Gift -->
+  <div class="modal ld ld-grow-btt-in" id="exampleModalGift" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabelGift" aria-hidden="true">
+    <div class="modal-dialog " role="document" style="top: 20%; bottom: auto;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabelGift">Gift</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>Mã giảm giá: <span class="voucher">PS15571</span></div>
+          <div>Số mã giảm giá đã dùng:</div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:40%">40/100
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Gift -->
+  <script src="../js/new.js"></script>
+</body>
+
+</html>

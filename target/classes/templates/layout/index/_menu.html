@@ -1,0 +1,314 @@
+<div xmlns:th="http://www.thymeleaf.org">
+	<nav class="navbar navbar-expand-xl sticky-top">
+		<a id="logo1" class="collapse navbar-collapse" href="#" style="">POLY
+			SHOP</a> <a id="logo2" class="navbar-toggler" href="/home" style="">POLY
+			SHOP</a> <a href="#" class="navbar-toggler bi bi-person"
+			style="margin-right: 0px; margin-left: auto; border: none;"></a>
+		<!-- side-search -->
+		<!-- Sidebar -->
+		<div class="w3-sidebar w3-bar-block w3-animate-right"
+			style="display: none; z-index: 5; right: 0; top: 0px; width: 400px;"
+			id="mySearch">
+			<button class="w3-bar-item w3-button w3-xxlarge"
+				onclick="search_close()" style="text-align: right; font-size: 10px;">
+				<i class="fas fa-times"></i>
+			</button>
+			<div
+				style="text-align: center; font-size: 30px; font-weight: bold; margin-bottom: -10px;">SEARCH
+			</div>
+			<form class="search-body" name="searchName" ng-app="">
+				<div class="form-group" id="search-input">
+					<div class="row no-gutters">
+						<div class="col">
+							<input ng-model="searchsp" name="searchsp"
+								class="form-control border-secondary border-right-0 rounded-0"
+								type="text" placeholder="search" id="example-search-input4"
+								required>
+						</div>
+						<div class="col-auto">
+							<button
+								class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right"
+								type="button">
+								<i class="fa fa-search"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="cart-soc"></div>
+
+				<div class="row body-sss">
+					<div class="boxsp col-sm-6" id="search-items"
+						ng-repeat="sp in sanpham | filter : searchsp : false ">
+						<a class="thumbnail mx-auto" href="#"> <img
+							src="/img/{{sp.img}}" alt="" class="">
+							<div class="tbd">
+								<div class="caption">{{sp.name}}</div>
+								<div>{{sp.price|number}} VNÄ�</div>
+							</div>
+						</a>
+					</div>
+
+				</div>
+			</form>
+		</div>
+
+		<!-- Page Content -->
+		<div class="w3-overlay" onclick="search_close()"
+			style="cursor: pointer" id="myOverlaySearch"></div>
+
+		<div>
+			<a href="#" class="navbar-toggler bi bi-search" id="icon2"
+				onclick="search_open()"></a>
+			<div class="w3-container"></div>
+		</div>
+
+		<script>
+			function search_open() {
+				document.getElementById("mySearch").style.display = "block";
+				document.getElementById("myOverlaySearch").style.display = "block";
+			}
+
+			function search_close() {
+				document.getElementById("mySearch").style.display = "none";
+				document.getElementById("myOverlaySearch").style.display = "none";
+			}
+		</script>
+		<!-- side-search -->
+		<!-- side-bag -->
+		<!-- Sidebar -->
+		<div class="w3-sidebar w3-bar-block w3-animate-right"
+			style="display: none; z-index: 5; right: 0; top: 0px; width: 400px;"
+			id="myBag">
+			<button class="w3-bar-item w3-button w3-xxlarge"
+				onclick="bag_close()" style="text-align: right; font-size: 10px;">
+				<i class="fas fa-times"></i>
+			</button>
+			<div
+				style="text-align: center; font-size: 30px; font-weight: bold; margin-bottom: -10px;">CART
+			</div>
+			<div id="myCart">
+				<div class="cart-body">
+					<div class="col-sm-3">
+						<img src="../img/img1.jpg" alt="">
+					</div>
+					<div class="col-sm-8 d-flex">
+						<div class="title-price">
+							<div class="name-cart">name</div>
+							<div class="price-cart">price / size</div>
+						</div>
+						<div>
+							<input class="d-flex flex-row-reverse asdasd" type="number"
+								id="tentacles" name="tentacles" min="1" max="10" value="1">
+							<button class=""
+								style="border: none; background-color: white; margin-left: 100px; margin-right: 20px;">
+								<i class="far fa-trash-alt"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="cart-soc"></div>
+				<div class="thanh-tien">Tá»•ng tiá»�n: $$$</div>
+			</div>
+		</div>
+
+		<!-- Page Content -->
+		<div class="w3-overlay" onclick="bag_close()" style="cursor: pointer"
+			id="myOverlayBag"></div>
+
+		<div>
+			<a href="#" class="navbar-toggler bi bi-bag" id="icon1"
+				onclick="bag_open()"></a>
+			<div class="w3-container"></div>
+		</div>
+
+		<script>
+			function bag_open() {
+				document.getElementById("myBag").style.display = "block";
+				document.getElementById("myOverlayBag").style.display = "block";
+			}
+
+			function bag_close() {
+				document.getElementById("myBag").style.display = "none";
+				document.getElementById("myOverlayBag").style.display = "none";
+			}
+		</script>
+		<!-- side-bag -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<i class="bi bi-justify"></i>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link"
+					href="/home/index">Trang chá»§ <span class="sr-only"></span></a></li>
+				<div class="dropdowns">
+					<a class="nav-link" href="/product">Sản phẩm&nbsp;<i
+						class="fas fa-angle-down"></i></a>
+					<div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+						<div class="container">
+							<div class="row">
+
+								<div class="col-md-2">
+									<a class="dropdown-item" href="/product">T-Shirt <span
+										class="badge">42</span></a>
+								</div>
+
+								<div class="col-md-2">
+									<a class="dropdown-item" href="#">Pants <span class="badge">42</span></a>
+
+								</div>
+
+								<div class="col-md-2">
+									<a class="dropdown-item" href="#">Shirt <span class="badge">42</span></a>
+
+								</div>
+
+								<div class="col-md-2">
+									<a class="dropdown-item" href="#">Hat <span class="badge">42</span></a>
+
+								</div>
+
+								<div class="col-md-2">
+									<a class="dropdown-item" href="#">Hoddie <span
+										class="badge">42</span></a>
+								</div>
+
+								<div class="col-md-2">
+									<a class="dropdown-item" href="#">Jacket <span
+										class="badge">42</span></a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<li class="nav-item"><a class="nav-link" href="/home/new">New</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="/home/highlights">Ná»•i báº­t</a></li>
+				<li class="nav-item"><a class="nav-link" href="/home/contact">LiÃªn
+						há»‡</a></li>
+
+			</ul>
+			<form class="collapse navbar-collapse flex-row-reverse">
+				<!-- <a href="#" class="bi bi-search" id="icon2" onclick="w3_open()"></a> -->
+				<!-- side-search -->
+				<!-- Sidebar -->
+				<div class="w3-sidebar w3-bar-block w3-animate-right"
+					style="display: none; z-index: 5; right: 0; top: 0px; width: 400px;"
+					id="mySearch">
+					<button class="w3-bar-item w3-button w3-xxlarge"
+						onclick="search_close()"
+						style="text-align: right; font-size: 10px;">
+						<i class="fas fa-times"></i>
+					</button>
+					<div
+						style="text-align: center; font-size: 30px; font-weight: bold; margin-bottom: -10px;">SEARCH
+					</div>
+					<form class="search-body" name="searchName" ng-app="">
+						<div class="form-group" id="search-input">
+							<div class="row no-gutters">
+								<div class="col">
+									<input ng-model="searchsp" name="searchsp"
+										class="form-control border-secondary border-right-0 rounded-0"
+										type="text" placeholder="search" id="example-search-input4"
+										required>
+								</div>
+								<div class="col-auto">
+									<button
+										class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right"
+										type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="cart-soc"></div>
+
+						<div class="row body-sss">
+							<div class="col-sm-6" id="search-items"
+								ng-repeat="sp in sanpham | filter : searchsp : false ">
+								<a class="thumbnail mx-auto" href="#"> <img
+									src="/img/{{sp.img}}" alt="" class="">
+									<div class="tbd">
+										<div class="caption">{{sp.name}}</div>
+										<div>{{sp.price|number }} VNÄ�</div>
+									</div>
+								</a>
+							</div>
+
+						</div>
+					</form>
+				</div>
+
+				<!-- Page Content -->
+				<div class="w3-overlay" onclick="search_close()"
+					style="cursor: pointer" id="myOverlaySearch"></div>
+
+				<div>
+					<a href="#" class="bi bi-search" id="icon2" onclick="search_open()"></a>
+					<div class="w3-container"></div>
+				</div>
+
+				<script>
+					function search_open() {
+						document.getElementById("mySearch").style.display = "block";
+						document.getElementById("myOverlaySearch").style.display = "block";
+					}
+
+					function search_close() {
+						document.getElementById("mySearch").style.display = "none";
+						document.getElementById("myOverlaySearch").style.display = "none";
+					}
+				</script>
+				<!-- side-search -->
+				<!-- side-bag -->
+				<!-- Sidebar -->
+				<div class="w3-sidebar w3-bar-block w3-animate-right"
+					style="display: none; z-index: 5; right: 0; top: 0px; width: 400px;"
+					id="myBag">
+					<button class="w3-bar-item w3-button w3-xxlarge"
+						onclick="bag_close()" style="text-align: right; font-size: 10px;">
+						<i class="fas fa-times"></i>
+					</button>
+					<div
+						style="text-align: center; font-size: 30px; font-weight: bold; margin-bottom: -10px;">CART
+					</div>
+					<div id="myCart"></div>
+				</div>
+
+				<!-- Page Content -->
+				<div class="w3-overlay" onclick="bag_close()"
+					style="cursor: pointer" id="myOverlayBag"></div>
+
+				<div>
+					<a href="#" class="bi bi-bag" id="icon1" onclick="bag_open()">
+						<div class="badge badge-warning" id="lblCartCount">0</div>
+					</a>
+					<div class="w3-container"></div>
+				</div>
+
+				<script>
+					function bag_open() {
+						document.getElementById("myBag").style.display = "block";
+						document.getElementById("myOverlayBag").style.display = "block";
+						showMyCart();
+					}
+
+					function bag_close() {
+						document.getElementById("myBag").style.display = "none";
+						document.getElementById("myOverlayBag").style.display = "none";
+					}
+				</script>
+				<!-- side-bag -->
+				<a href="/login" class="bi bi-person" id="icon3"></a>
+				<!-- <a href="#" class="bi bi-bag" id="icon1" data-toggle="modal" data-target="#exampleModal"></a> -->
+			</form>
+		</div>
+	</nav>
+</div>

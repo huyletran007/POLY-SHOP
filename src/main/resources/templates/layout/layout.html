@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POLY SHOP</title>
+<!--boostrap 4-->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous">
+	
+</script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+	crossorigin="anonymous">
+	
+</script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+	crossorigin="anonymous">
+	
+</script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+<!--icon-->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+<script src="https://kit.fontawesome.com/73ae4a903f.js"
+	crossorigin="anonymous"></script>
+<!--style-->
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.jsdelivr.net/gh/loadingio/transition.css@v2.0.0/dist/transition.css" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<!--  -->
+<link rel="stylesheet" th:href=@{/css/index.css}>
+<link rel="stylesheet" th:href=@{/css/SanPham.css}>
+<link rel="stylesheet" th:href=@{/css/detailSP.css}>
+<link rel="stylesheet" th:href=@{/css/Login.css}>
+<link rel="stylesheet" th:href=@{/css/DangKy.css}>
+</head>
+
+<body ng-app="myApp" ng-controller="sanphamCtrl">
+	<!--MENU-->
+	<nav class="navbar navbar-expand-xl sticky-top">
+		<a id="logo1" class="collapse navbar-collapse" href="#" style="">POLY
+			SHOP</a> <a id="logo2" class="navbar-toggler" href="/home" style="">POLY
+			SHOP</a> <a href="#" class="navbar-toggler bi bi-person"
+			style="margin-right: 0px; margin-left: auto; border: none;"></a>
+		<!-- side-search -->
+		<!-- Sidebar -->
+		<div class="w3-sidebar w3-bar-block w3-animate-right"
+			style="display: none; z-index: 5; right: 0; top: 0px; width: 400px;"
+			id="mySearch">
+			<button class="w3-bar-item w3-button w3-xxlarge"
+				onclick="search_close()" style="text-align: right; font-size: 10px;">
+				<i class="fas fa-times"></i>
+			</button>
+			<div
+				style="text-align: center; font-size: 30px; font-weight: bold; margin-bottom: -10px;">SEARCH
+			</div>
+			<form class="search-body" name="searchName" ng-app="">
+				<div class="form-group" id="search-input">
+					<div class="row no-gutters">
+						<div class="col">
+							<input
+								class="form-control border-secondary border-right-0 rounded-0"
+								type="text" placeholder="search" id="example-search-input4"
+								ng-keyup="searchProduct(info)" ng-model="info">
+						</div>
+						<div class="col-auto">
+							<button
+								class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right"
+								type="button" ng-click="searchProduct(info)">
+								<i class="fa fa-search"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="cart-soc"></div>
+
+				<div class="row body-sss">
+					<div class="boxsp col-sm-6" id="search-items"
+						ng-repeat="item in items1">
+						<a class="thumbnail mx-auto" href="/product/detail/{{item.id}}">
+							<img src="/images/{{item.image}}" alt="" class="">
+							<div class="tbd">
+								<div class="caption">{{item.name}}</div>
+								<div>{{item.newprice| number:-1}} VNĐ</div>
+							</div>
+						</a>
+					</div>
+
+				</div>
+			</form>
+		</div>
+
+		<!-- Page Content -->
+		<div class="w3-overlay" onclick="search_close()"
+			style="cursor: pointer" id="myOverlaySearch"></div>
+
+		<div>
+			<a href="#" class="navbar-toggler bi bi-search" id="icon2"
+				onclick="search_open()"></a>
+			<div class="w3-container"></div>
+		</div>
+		<script>
+			function search_open() {
+				document.getElementById("mySearch").style.display = "block";
+				document.getElementById("myOverlaySearch").style.display = "block";
+			}
+
+			function search_close() {
+				document.getElementById("mySearch").style.display = "none";
+				document.getElementById("myOverlaySearch").style.display = "none";
+			}
+		</script>
+		<!-- side-search -->
+		<!-- side-bag -->
+		<!-- Sidebar -->
+		<div class="w3-sidebar w3-bar-block w3-animate-right"
+			style="display: none; z-index: 5; right: 0; top: 0px; width: 400px;"
+			id="myBag">
+			<button class="w3-bar-item w3-button w3-xxlarge"
+				onclick="bag_close()" style="text-align: right; font-size: 10px;">
+				<i class="fas fa-times"></i>
+			</button>
+			<div
+				style="text-align: center; font-size: 30px; font-weight: bold; margin-bottom: -10px;">CART
+			</div>
+			<div id="myCart" th:fragment="shopping-cart">
+				<!-- <div class="cart-body">
+					<div class="col-sm-3">
+						<img src="../img/img1.jpg" alt="">
+					</div>
+					<div class="col-sm-8 d-flex">
+						<div class="title-price">
+							<div class="name-cart">name</div>
+							<div class="price-cart">price / size</div>
+						</div>
+						<div>
+							<input class="d-flex flex-row-reverse asdasd" type="number"
+								id="tentacles" name="tentacles" min="1" max="10" value="1">
+							<button class=""
+								style="border: none; background-color: white; margin-left: 100px; margin-right: 20px;">
+								<i class="far fa-trash-alt"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="cart-soc"></div>
+				<div class="thanh-tien">Tá»•ng tiá»�n: $$$</div> -->
+
+				<div class="cart-body" ng-repeat="item in cart.items">
+					<div class="col-sm-3">
+						<img src="/images/{{item.image}}">
+					</div>
+					<div class="col-sm-8 d-flex">
+						<div class="title-price">
+							<div class="name-cart">{{item.name}}</div>
+							<div class="price-cart">{{item.newprice| number:-1}}VNĐ / Oversize</div>
+						</div>
+						<div>
+							<input class="d-flex flex-row-reverse asdasd" type="number"
+								id="tentacles" name="tentacles" min="1" max="100"
+								ng-change="cart.saveToLocalStorage()" ng-model="item.qty">
+							<button ng-click="cart.remove(item.id)" class=""
+								style="border: none; background-color: white; margin-left: 100px; margin-right: 20px; margin-top: 10px; font-size: 20px">
+								<i class="far fa-trash-alt"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="cart-soc"></div>
+				<div class="thanh-tien">Tổng tiền: {{cart.amount | number:2}}
+					VND</div>
+				<a href="#" style="margin-left: 20px;" class="float-left"
+					ng-click="cart.clear()">Xóa tất cả<i class="fas fa-trash"
+					style="margin-left: 5px;"></i></a> <a th:href="@{/order/checkout}"
+					class="thanhtoan float-right">Thanh toán >></a> <a
+					th:href="@{/cart/view}" class="thanhtoan float-right">Chi tiết
+					></a>
+			</div>
+		</div>
+
+		<!-- Page Content -->
+		<div class="w3-overlay" onclick="bag_close()" style="cursor: pointer"
+			id="myOverlayBag"></div>
+
+		<div>
+			<a href="#" class="navbar-toggler bi bi-bag" id="icon1"
+				onclick="bag_open()"></a>
+			<div class="w3-container"></div>
+		</div>
+
+		<script>
+			function bag_open() {
+				document.getElementById("myBag").style.display = "block";
+				document.getElementById("myOverlayBag").style.display = "block";
+			}
+
+			function bag_close() {
+				document.getElementById("myBag").style.display = "none";
+				document.getElementById("myOverlayBag").style.display = "none";
+			}
+		</script>
+		<!-- side-bag -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<i class="bi bi-justify"></i>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link"
+					href="/home/index" th:text="#{div.home}">Trang chủ <span class="sr-only"></span></a></li>
+				<div class="dropdowns">
+					<a class="nav-link" href="/product" th:text="#{div.products}">Sản phẩm&nbsp;<i
+						class="fas fa-angle-down"></i></a>
+					<div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+						<div class="container">
+							<div class="row">
+
+								<div class="col-md-2 abcde" th:each="c:*{cates}">
+									<a class="dropdown-item" th:href="@{|/product/category?cid=${c.id}|}">[[${c.name}]]<span
+										class="badge">{{totalProduct}}</span></a>
+								</div>
+
+								
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<li class="nav-item"><a class="nav-link" href="/home/new" th:text="#{div.new}">New</a>
+				</li>
+				<li class="nav-item"><a class="nav-link"
+					href="/home/highlights" th:text="#{div.highlights}">Nổi bật</a></li>
+				<li class="nav-item"><a class="nav-link" href="/home/contact" th:text="#{div.contact}">Liên
+						hệ</a></li>
+
+			</ul>
+			<form class="collapse navbar-collapse flex-row-reverse">
+				<!-- <a href="#" class="bi bi-search" id="icon2" onclick="w3_open()"></a> -->
+				<!-- side-search -->
+				<!-- Sidebar -->
+				<div class="w3-sidebar w3-bar-block w3-animate-right"
+					style="display: none; z-index: 5; right: 0; top: 0px; width: 400px;"
+					id="mySearch">
+					<button class="w3-bar-item w3-button w3-xxlarge"
+						onclick="search_close()"
+						style="text-align: right; font-size: 10px;">
+						<i class="fas fa-times"></i>
+					</button>
+					<div
+						style="text-align: center; font-size: 30px; font-weight: bold; margin-bottom: -10px;">SEARCH
+					</div>
+					<form class="search-body" name="searchName" ng-app="">
+						<div class="form-group" id="search-input">
+							<div class="row no-gutters">
+								<div class="col">
+									<input ng-model="searchsp" name="searchsp"
+										class="form-control border-secondary border-right-0 rounded-0"
+										type="text" placeholder="search" id="example-search-input4"
+										required>
+								</div>
+								<div class="col-auto">
+									<button
+										class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right"
+										type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="cart-soc"></div>
+
+						<div class="row body-sss">
+							<div class="col-sm-6" id="search-items"
+								ng-repeat="sp in sanpham | filter : searchsp : false ">
+								<a class="thumbnail mx-auto" href="#"> <img
+									src="/img/{{sp.img}}" alt="" class="">
+									<div class="tbd">
+										<div class="caption">{{sp.name}}</div>
+										<div>{{sp.price|number }} VNÄ�</div>
+									</div>
+								</a>
+							</div>
+
+						</div>
+					</form>
+				</div>
+
+				<!-- Page Content -->
+				<div class="dropdown">
+        			<button  type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         				 <i class="bi bi-globe"></i>
+       				</button> &nbsp;
+        			<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+			          <a class="dropdown-item" type="button" href="?lang=vi">Tiếng việt</a>
+			          <a class="dropdown-item" type="button" href="?lang=en">English</a>
+        			</div>
+      			</div>
+      			
+				<div class="w3-overlay" onclick="search_close()"
+					style="cursor: pointer" id="myOverlaySearch"></div>
+
+				<div>
+					<a href="#" class="bi bi-search" id="icon2" onclick="search_open()"></a>
+					<div class="w3-container"></div>
+				</div>
+
+				<script>
+					function search_open() {
+						document.getElementById("mySearch").style.display = "block";
+						document.getElementById("myOverlaySearch").style.display = "block";
+					}
+
+					function search_close() {
+						document.getElementById("mySearch").style.display = "none";
+						document.getElementById("myOverlaySearch").style.display = "none";
+					}
+				</script>
+				<!-- side-search -->
+				<!-- side-bag -->
+				<!-- Sidebar -->
+				<div class="w3-sidebar w3-bar-block w3-animate-right"
+					style="display: none; z-index: 5; right: 0; top: 0px; width: 400px;"
+					id="myBag">
+					<button class="w3-bar-item w3-button w3-xxlarge"
+						onclick="bag_close()" style="text-align: right; font-size: 10px;">
+						<i class="fas fa-times"></i>
+					</button>
+					<div
+						style="text-align: center; font-size: 30px; font-weight: bold; margin-bottom: -10px;">CART
+					</div>
+					<div id="myCart"></div>
+				</div>
+
+				<!-- Page Content -->
+				<div class="w3-overlay" onclick="bag_close()"
+					style="cursor: pointer" id="myOverlayBag"></div>
+
+				<div>
+					<a href="#" class="bi bi-bag" id="icon1" onclick="bag_open()">
+						<div class="badge badge-warning" id="lblCartCount">{{cart.count}}</div>
+					</a>
+					<div class="w3-container"></div>
+				</div>
+
+				<script>
+					function bag_open() {
+						document.getElementById("myBag").style.display = "block";
+						document.getElementById("myOverlayBag").style.display = "block";
+						//showMyCart();
+					}
+
+					function bag_close() {
+						document.getElementById("myBag").style.display = "none";
+						document.getElementById("myOverlayBag").style.display = "none";
+					}
+				</script>
+				<!-- side-bag -->
+				<div class="dropdown">
+					<div class="bi bi-person drop1111" data-toggle="dropdown"
+						id="icon3"></div>
+					<ul class="dropdown-menu drop-user" role="menu"
+						aria-labelledby="dropdownMenu">
+						<th:block th:unless="${#request.remoteUser}">
+							<li class="link1"><a tabindex="-1" href="/login">Login</a></li>
+						</th:block>
+						<th:block th:if="${#request.remoteUser}">
+							<li class="link1"><a tabindex="-1" href="/login/success">Account</a></li>
+							<li class="link1"><a tabindex="-1" th:href="@{/logoff}">Logout</a></li>
+							<li class="link1"
+								th:if="${#request.isUserInRole('STAFF') or #request.isUserInRole('ADMIN')}">
+								<a th:href="@{/admin/home}">Administration</a>
+							</li>
+						</th:block>
+					</ul>
+				</div>
+				<!-- <a href="#" class="bi bi-bag" id="icon1" data-toggle="modal" data-target="#exampleModal"></a> -->
+			</form>
+		</div>
+	</nav>
+	<!--MENU-->
+	<!-- MAIN -->
+	<main class="row" th:replace="${main}" ng-controller="sanphamCtrl"></main>
+	<!-- MAIN -->
+	<!-- zalo -->
+	<div class="zalo-chat-widget" data-oaid="579745863508352884"
+		data-welcome-message="Rất vui khi được hỗ trợ bạn!" data-autopopup="0"
+		data-width="300" data-height="300"></div>
+
+	<script src="https://sp.zalo.me/plugins/sdk.js"></script>
+	<!-- zalo -->
+	<!--Nôi dung-->
+	<!--FOOTER-->
+	<footer th:replace="~{/layout/index/_footer.html}"> </footer>
+	<!--FOOTER-->
+	<script>
+		$(document).ready(function() {
+			$(window).scroll(function() {
+				if ($(this).scrollTop()) {
+					$('nav').addClass('sticky');
+				} else {
+					$('nav').removeClass('sticky');
+				}
+			});
+		});
+	</script>
+	<!-- sidebar -->
+	<!-- Modal -->
+	<!-- Gift -->
+	<div class="modal ld ld-grow-btt-in" id="exampleModalGift"
+		tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelGift"
+		aria-hidden="true">
+		<div class="modal-dialog " role="document"
+			style="top: 20%; bottom: auto;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabelGift">Gift</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div>
+						Mã giảm giá: <span class="voucher">PS15571</span>
+					</div>
+					<div>Số mã giảm giá đã dùng:</div>
+					<div class="progress">
+						<div
+							class="progress-bar progress-bar-striped progress-bar-animated"
+							style="width: 40%">40/100</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Gift -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Giỏ hàng</h5>
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">...</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary"
+						data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script th:src="@{/js/index.js}"></script>
+	<!--Slick Carousel Slider-->
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<script type="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.jsdelivr.net/gh/loadingio/transition.css@v2.0.0/dist/transition.css" />
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</body>
+
+</html>

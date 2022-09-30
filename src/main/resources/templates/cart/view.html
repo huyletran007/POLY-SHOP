@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/layout :: dynamic (~{::body})}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="card mt-3" th:fragment="shopping-cart">
+			<div class="card-header text-white w3-center head-cart">
+				<h3 class="mt-2 ">CART</h3>
+			</div>
+			<div class="card-body p-0">
+				<table class="table table-bordered mb-0">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Name</th>
+							<th>Price</th>
+							<th>Quantity</th>
+							<th>Amount</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="item in cart.items">
+							<td>{{item.id}}</td>
+							<td>{{item.name}}</td>
+							<td>{{item.newprice | number:0}} VNĐ</td>
+							<td><input ng-change="cart.saveToLocalStorage()" ng-model="item.qty" type="number" min="1" style="width:100px;"></td>
+							<td>{{item.qty*item.newprice | number:0}} VNĐ</td>
+							<td>
+								<button ng-click="cart.remove(item.id)" class="btn btn-danger">
+									<i class="fas fa-trash"></i> Del
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="card-footer w3-center">
+				<button ng-click="cart.clear()" class="btn btn-danger">
+					<i class="fas fa-trash"></i> Clear
+				</button>
+				<a th:href="@{/order/checkout}" class="btn btn-success">
+					<i class="fa-solid fa-circle-check"></i> Checkout
+				</a>
+			</div>
+		</div>
+</body>
+</html>
